@@ -1,44 +1,29 @@
-import Header from './components/Header';
-import Movielist from './components/Movielist';
+import { Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Movies from './pages/Movies';
+import About from './pages/About';
+import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import Greeting from './components/Greeting';
-import Card from './components/Card';
-import ProfileCard from './components/ProfileCard';
-
-const students = [
-  { id: 1, name: 'ฝน',   year: 3 },
-  { id: 2, name: 'เต้ย', year: 2 },
-  { id: 3, name: 'มายด์', year: 4 },
-];
-
-const members = [
-  { id: 1, name: 'สมหญิง ใจดี', nickname: 'ฝน',
-    major: 'เทคโนโลยีสารสนเทศ', favorites: ['ชาเขียว', 'แมว'] },
-  // 👉 เพิ่มสมาชิกคนอื่น ๆ ของกลุ่มที่นี่
-   { id: 2, name: 'สมชาย เจ๋งแจ๋ว', nickname: 'กาย',
-    major: 'เทคโนโลยีสารสนเทศ', favorites: ['หมา', 'โอวัลติน', 'เล่นเกม'] },
-
-     { id: 3, name: 'มะแม่ว บรรจบ', nickname: 'แม่ว',
-    major: 'เทคโนโลยีสารสนเทศ', favorites: ['ท่องเที่ยว', 'เดินป่า', 'ถ่ายรูป'] },
-];
+import MovieDetail from './pages/MovieDetail';
+import NotFound from './pages/NotFound';
 
 function App() {
-  return (
-    <div className="container">
-      <h1>สมาชิกกลุ่มของเรา</h1>
-      <div className="card-row">
-        {members.map((m) => (
-          <ProfileCard
-            key={m.id}
-            name={m.name}
-            nickname={m.nickname}
-            major={m.major}
-            favorites={m.favorites}
-          />
-        ))}
-      </div>
+   return (
+    <div className="flex min-h-screen flex-col bg-slate-50">
+      <Navbar />                {/* ← เห็นทุกหน้า */}
+      <main className="flex-1">
+        <Routes> 
+        <Route path="/" element={<Home />} />
+  <Route path="/movies" element={<Movies />} />
+  <Route path="/movies/:id" element={<MovieDetail />} />
+  <Route path="/about" element={<About />} />
+  <Route path="*" element={<NotFound />} />
+        </Routes>
+      </main>
+      <Footer />                {/* ← เห็นทุกหน้า */}
     </div>
   );
 }
+
 
 export default App;
