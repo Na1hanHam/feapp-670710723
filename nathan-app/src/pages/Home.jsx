@@ -1,5 +1,3 @@
-import React from "react";
-import {Link} from 'react-router-dom';
 import {movies} from '../data';
 import MovieCard from "../components/MovieCard.jsx";
 import MovieGallery from "../components/MovieGallery.jsx";
