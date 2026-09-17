@@ -8,7 +8,7 @@ function MovieCard({ title, year }) {
       <h3 className="text-lg font-bold">{title} ({year})</h3>
       <button
         onClick={() => setLikes(likes + 1)}   // 3. เปลี่ยนค่าผ่าน setLikes
-        className="mt-3 rounded-lg bg-pink-100 px-4 py-2 text-pink-700
+        className="mt-3 rounded-lg bg-pink-100 px-4 py-2 text-blue-700
                    font-semibold hover:bg-pink-200 transition">
         ❤️ {likes}
       </button>
