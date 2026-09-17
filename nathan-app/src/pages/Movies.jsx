@@ -4,7 +4,7 @@ import { useState } from 'react';
 import SearchBox from '../components/SearchBox.jsx';
 import GenreBox from '../components/GenreBox.jsx';
 
-const GENRES = [... new Set(movies.map(m => m.genre))];
+const GENRES = [...new Set(movies.map(m => m.genre))];
 function Movies() {
   const [query, setQuery] = useState('');
 const [genre, setGenre] = useState('all'); // Fixed typo: useStat
